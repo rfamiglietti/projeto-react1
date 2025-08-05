@@ -1,4 +1,3 @@
-
 import React from 'react';
 import MeuComponente from './components/MeuComponente';
 import Contador from './components/Contador';
@@ -19,6 +18,12 @@ import TabsNavegacao from './components/TabsNavegacao';
 import GaleriaImagens from './components/GaleriaImagens';
 
 function App() {
+  const imagens = [
+    "/foto3x4.jpg",
+    "/fotodev.jpg",
+    "/fotoeletro.jpg",
+  ];
+
   return (
     <div className="App">
       {/* Componentes sem props obrigatórias */}
@@ -30,7 +35,7 @@ function App() {
       <InputComLabel label="Digite algo:" placeholder="Texto aqui" />
       <Modal aberto={false} fechar={() => {}}>Conteúdo do modal</Modal>
       <Spinner />
-      <AvatarUsuario nome="Gabriel" imagem="https://via.placeholder.com/48" />
+      <AvatarUsuario nome="Rômulo" imagem="/foto3x4.jpg" />
       <ListaInterativa itens={['Item 1', 'Item 2']} aoClicar={(item) => alert(item)} />
       <NavbarResponsiva />
       <FooterSimples />
@@ -44,10 +49,7 @@ function App() {
         { titulo: 'Aba 1', conteudo: <p>Conteúdo da aba 1</p> },
         { titulo: 'Aba 2', conteudo: <p>Conteúdo da aba 2</p> }
       ]} />
-      <GaleriaImagens imagens={[
-        'https://via.placeholder.com/150',
-        'https://via.placeholder.com/150'
-      ]} />
+      <GaleriaImagens imagens={imagens} />
     </div>
   );
 }
